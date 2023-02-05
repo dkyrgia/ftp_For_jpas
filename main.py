@@ -14,7 +14,10 @@ f.close()
 username = re.sub("\n", "", connect_params[0])
 password = re.sub("\n", "", connect_params[1])
 site_url = re.sub("\n", "", connect_params[2])
+# the path in the remote server where the files are located
 site_directory = re.sub("\n", "", connect_params[3])
+# these are the filename, tha last x position  that contain
+# only the name and not all the other file attributes.
 jpa_position = int(re.sub("\n", "", connect_params[4]))
 string_to_search: str = re.sub("\n", "", connect_params[5])
 
