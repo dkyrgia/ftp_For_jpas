@@ -5,6 +5,7 @@ import re
 # initialize the list
 connect_params: list = ["a", "b", "c", "d", 1, "f"]
 # params.txt contains 6 parameters necessary for connection and download
+# here I read from this file
 f = open('params.txt', 'r')
 for x in range(6):
     temp_param: list = f.readline()
@@ -21,6 +22,7 @@ site_directory = re.sub("\n", "", connect_params[3])
 jpa_position = int(re.sub("\n", "", connect_params[4]))
 string_to_search: str = re.sub("\n", "", connect_params[5])
 
+
 def dirCallback(line):
     line = "%s" % line
     line = line[jpa_position:]
@@ -35,7 +37,7 @@ def dirCallback(line):
 if __name__ == '__main__':
     cmd = "dir *.jpa | findstr " + string_to_search
     returned_value_get = os.system(cmd)  # returns a list of all jpa files containing string_to_search
-    cmd = "del *" + string_to_search + "*.jpa" # delete all jpa files containing string_to_search
+    cmd = "del *" + string_to_search + "*.jpa"  # delete all jpa files containing string_to_search
     returned_value_del = os.system(cmd)  # returns the exit code in unix
     print('returned value:', returned_value_del)
     ftp = FTP(site_url)  # connect to host, default port
