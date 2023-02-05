@@ -43,7 +43,7 @@ if __name__ == '__main__':
     ftp = FTP(site_url)  # connect to host, default port
     ftp.login(username, password)
     ftp.cwd(site_directory)  # changing to the directory akeeba saves.
-    print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+    print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
     ftp.retrlines('LIST')
     files = ftp.dir("*.jpa", dirCallback)
     ftp.quit()
