@@ -48,5 +48,3 @@ if __name__ == '__main__':
     files = ftp.dir("*.jpa", dirCallback)
     ftp.quit()
     print('TELOS')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
